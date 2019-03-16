@@ -64,6 +64,14 @@ INSTALLED_APPS = [
 
 REACT_APP_DIR = 'frontend/static'
 
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME ="memebucketccs"
+AWS_S3_FILE_OVERWRITE= False
+AWS_DEFAULT_ACL =None  # DEFAULT WILL BE TO LOCKDOWN EVERYTHING
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -98,18 +106,18 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-# if os.environ.get('DATABASE_URL'):
-#    DATABASES = {
-#        'default': dj_database_url.config(default=os.environ['DATABASE_URL']),
-#    }
-# else:
+if os.environ.get('DATABASE_URL'):
+   DATABASES = {
+       'default': dj_database_url.config(default=os.environ['DATABASE_URL']),
+   }
+else:
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
 
 
 # Password validation
