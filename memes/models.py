@@ -7,5 +7,5 @@ class Memes(models.Model):
 
     # name = models.CharField(max_length=255)
     # message = models.CharField(max_length=255)
-    image = models.FileField(upload_to=' ', blank=True)
+    image = models.FileField(upload_to='media/ ', blank=True)
     title = models.CharField(max_length=255)

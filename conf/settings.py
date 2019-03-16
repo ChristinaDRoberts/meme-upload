@@ -66,12 +66,6 @@ INSTALLED_APPS = [
 
 REACT_APP_DIR = 'frontend/static'
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
-AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
-AWS_STORAGE_BUCKET_NAME ="memebucketccs"
-AWS_S3_FILE_OVERWRITE= False
-AWS_DEFAULT_ACL =None  # DEFAULT WILL BE TO LOCKDOWN EVERYTHING
 
 
 MIDDLEWARE = [
@@ -82,7 +76,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'frontend.middleware.dev_cors_middleware',  # add the CORs middlewa
+    # 'frontend.middleware.dev_cors_middleware',  # add the CORs middlewa
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'conf.urls'
@@ -105,6 +100,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'conf.wsgi.application'
 
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME ="memebucketccs"
+AWS_S3_FILE_OVERWRITE= False
+AWS_DEFAULT_ACL =None  # DEFAULT WILL BE TO LOCKDOWN EVERYTHING
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -159,6 +160,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/static/media')
 
 MEDIA_URL = '/media/'
