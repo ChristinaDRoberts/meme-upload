@@ -1,3 +1,7 @@
 # 8.3 Meme Me
 
-Use this to submit your 8.3 Meme Me assignment
+
+Assignment to upload memes to a 
+database using React, Django, API, 
+virtual environmente.   
+
