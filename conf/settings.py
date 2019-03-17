@@ -76,7 +76,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'frontend.middleware.dev_cors_middleware',  # add the CORs middlewa
+    'frontend.middleware.dev_cors_middleware',  # add the CORs middlewa
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
