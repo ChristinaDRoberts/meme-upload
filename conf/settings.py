@@ -45,7 +45,7 @@ SECRET_KEY = 'd%^l1g1zv1guy=y%knlx6g9i=&)2c_-**p$y=tdz&%s2k5o4p)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["react-image-board.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["meme27.herokuapp.com", "localhost"]
 
 
 
