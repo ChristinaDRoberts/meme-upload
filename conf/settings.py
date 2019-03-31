@@ -160,6 +160,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/static/media')
 
 MEDIA_URL = '/media/'
