@@ -32,7 +32,7 @@ STATICFILES_FINDERS = [
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'frontend/static/build/static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 
@@ -76,7 +76,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'frontend.middleware.dev_cors_middleware',  # add the CORs middlewa
+    # 'frontend.middleware.dev_cors_middleware',  # add the CORs middlewa
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
