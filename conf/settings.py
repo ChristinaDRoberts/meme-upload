@@ -32,7 +32,7 @@ STATICFILES_FINDERS = [
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'frontend/static/build/static'),
+    os.path.join(BASE_DIR, 'frontend/static/build/static/'),
 )
 
 
@@ -110,9 +110,9 @@ AWS_DEFAULT_ACL =None  # DEFAULT WILL BE TO LOCKDOWN EVERYTHING
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 if os.environ.get('DATABASE_URL'):
-   DATABASES = {
+    DATABASES = {
        'default': dj_database_url.config(default=os.environ['DATABASE_URL']),
-   }
+    }
 else:
 
     DATABASES = {
